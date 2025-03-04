@@ -1,5 +1,6 @@
-import { formatDuration } from "@/lib/utils";
 import Image from "next/image";
+
+import { formatDuration } from "@/lib/utils";
 
 interface VideoThumbnailProps {
   title: string;
