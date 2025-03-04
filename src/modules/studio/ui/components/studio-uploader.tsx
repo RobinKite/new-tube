@@ -5,6 +5,7 @@ import MuxUploader, {
   MuxUploaderProgress,
   MuxUploaderStatus,
 } from "@mux/mux-uploader-react";
+
 import { Button } from "@/components/ui/button";
 
 interface StudioUploaderProps {
@@ -21,6 +22,7 @@ export const StudioUploader = ({
   return (
     <div>
       <MuxUploader
+        onSuccess={onSuccess}
         endpoint={endpoint}
         id={UPLOADER_ID}
         className="group/uploader hidden"
