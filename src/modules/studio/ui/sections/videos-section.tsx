@@ -1,7 +1,9 @@
 "use client";
 import { Suspense } from "react";
+import { format } from "date-fns";
 import { ErrorBoundary } from "react-error-boundary";
 import Link from "next/link";
+import { Globe2Icon, LockIcon } from "lucide-react";
 
 import { trpc } from "@/trpc/client";
 import { DEFAULT_LIMIT } from "@/constants";
@@ -15,6 +17,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { VideoThumbnail } from "@/modules/videos/ui/components/video-thumbnail";
+import { snakeCaseToTitle } from "@/lib/utils";
 
 export const VideosSection = () => {
   return (
@@ -66,14 +69,37 @@ const VideosSectionSuspense = () => {
                             duration={video.duration || 0}
                           />
                         </div>
+                        <div className="flex flex-col gap-y-1 overflow-hidden">
+                          <span className="line-clamp-1 text-xs">
+                            {video.title}
+                          </span>
+                          <span className="line-clamp-1 text-xs text-muted-foreground">
+                            {video.description || "No description"}
+                          </span>
+                        </div>
                       </div>
                     </TableCell>
-                    <TableCell>visibility</TableCell>
-                    <TableCell>status</TableCell>
-                    <TableCell>date</TableCell>
-                    <TableCell>views</TableCell>
-                    <TableCell>comments</TableCell>
-                    <TableCell>likes</TableCell>
+                    <TableCell>
+                      <div className="flex items-center">
+                        {video.visibility === "private" ? (
+                          <LockIcon className="mr-2 size-4" />
+                        ) : (
+                          <Globe2Icon className="mr-2 size-4" />
+                        )}
+                        {snakeCaseToTitle(video.visibility)}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center">
+                        {snakeCaseToTitle(video.muxStatus || "error")}
+                      </div>
+                    </TableCell>
+                    <TableCell className="truncate text-sm">
+                      {format(new Date(video.createdAt), "d MMM yyyy")}
+                    </TableCell>
+                    <TableCell>*views</TableCell>
+                    <TableCell>*comments</TableCell>
+                    <TableCell>*likes</TableCell>
                   </TableRow>
                 </Link>
               ))}
