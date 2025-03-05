@@ -53,6 +53,7 @@ import { snakeCaseToTitle } from "@/lib/utils";
 import { THUMBNAIL_FALLBACK } from "@/modules/videos/constants";
 
 import { ThumbnailUploadModal } from "../components/thumbnail-upload-modal";
+import { ThumbnailGenerateModal } from "../components/thumbnail-generate-modal";
 
 interface FormSectionProps {
   videoId: string;
@@ -77,6 +78,8 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
   const utils = trpc.useUtils();
 
   const [thumbnailModalOpen, setThumbnailModalOpen] = useState(false);
+  const [thumbnailGenerateModalOpen, setThumbnailGenerateModalOpen] =
+    useState(false);
 
   const [video] = trpc.studio.getOne.useSuspenseQuery({ id: videoId });
   // Add another suspense to categories to prevent awaiting for video to be loaded
@@ -105,17 +108,6 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
   });
 
   const generateTitle = trpc.videos.generateTitle.useMutation({
-    onSuccess: () => {
-      toast.success("Background job started", {
-        description: "This may take some time..",
-      });
-    },
-    onError: (error) => {
-      toast.error(error.message);
-    },
-  });
-
-  const generateThumbnail = trpc.videos.generateThumbnail.useMutation({
     onSuccess: () => {
       toast.success("Background job started", {
         description: "This may take some time..",
@@ -171,6 +163,11 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
 
   return (
     <>
+      <ThumbnailGenerateModal
+        open={thumbnailGenerateModalOpen}
+        onOpenChange={setThumbnailGenerateModalOpen}
+        videoId={videoId}
+      />
       <ThumbnailUploadModal
         open={thumbnailModalOpen}
         onOpenChange={setThumbnailModalOpen}
@@ -320,7 +317,7 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                             </DropdownMenuItem>
                             <DropdownMenuItem
                               onClick={() =>
-                                generateThumbnail.mutate({ id: videoId })
+                                setThumbnailGenerateModalOpen(true)
                               }>
                               <SparklesIcon className="mr-1 size-4" />
                               AI-generated
