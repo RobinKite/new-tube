@@ -166,6 +166,10 @@ export const commentRelations = relations(comments, ({ one /*, many*/ }) => ({
   }),
 }));
 
+export const commentSelectSchema = createSelectSchema(comments);
+export const commentInsertSchema = createInsertSchema(comments);
+export const commentUpdateSchema = createUpdateSchema(comments);
+
 export const videoViews = pgTable(
   "video_views",
   {
