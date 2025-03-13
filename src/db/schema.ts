@@ -147,7 +147,7 @@ export const comments = pgTable("comments", {
   userId: uuid("user_id")
     .references(() => users.id, { onDelete: "cascade" })
     .notNull(),
-  videoId: uuid("vieo_id")
+  videoId: uuid("video_id")
     .references(() => videos.id, { onDelete: "cascade" })
     .notNull(),
   value: text("value").notNull(),
@@ -155,13 +155,13 @@ export const comments = pgTable("comments", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-export const commentRelations = relations(comments, ({ one /*, many*/ }) => ({
+export const commentRelations = relations(comments, ({ one }) => ({
   user: one(users, {
     fields: [comments.userId],
     references: [users.id],
   }),
   video: one(videos, {
-    fields: [comments.userId],
+    fields: [comments.videoId],
     references: [videos.id],
   }),
 }));
