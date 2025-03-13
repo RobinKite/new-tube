@@ -2,6 +2,7 @@
 
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { Loader2Icon } from "lucide-react";
 
 import { trpc } from "@/trpc/client";
 import { CommentForm } from "@/modules/comments/ui/components/comment-form";
@@ -15,11 +16,19 @@ interface CommentsSectionProps {
 
 export const CommentsSection = ({ videoId }: CommentsSectionProps) => {
   return (
-    <Suspense fallback={"Loading..."}>
+    <Suspense fallback={<CommentsSectionSkeleton />}>
       <ErrorBoundary fallback={"Error..."}>
         <CommentsSectionSuspense videoId={videoId} />
       </ErrorBoundary>
     </Suspense>
+  );
+};
+
+const CommentsSectionSkeleton = () => {
+  return (
+    <div className="mt-6 flex items-center justify-center">
+      <Loader2Icon className="size-7 animate-spin text-muted-foreground" />
+    </div>
   );
 };
 
