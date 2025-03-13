@@ -141,7 +141,7 @@ export const videoRelations = relations(videos, ({ one, many }) => ({
     references: [categories.id],
   }),
   views: many(videoViews),
-  videoReactions: many(videoReactions),
+  reactions: many(videoReactions),
   comments: many(comments),
 }));
 
