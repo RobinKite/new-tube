@@ -242,7 +242,7 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                 disabled={update.isPending || !form.formState.isDirty}>
                 Save
               </Button>
-              <DropdownMenu>
+              <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
@@ -352,7 +352,7 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                           fill
                           alt="Thumbnail"
                         />
-                        <DropdownMenu>
+                        <DropdownMenu modal={false}>
                           <DropdownMenuTrigger asChild>
                             <Button
                               type="button"

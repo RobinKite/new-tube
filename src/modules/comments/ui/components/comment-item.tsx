@@ -59,7 +59,7 @@ export const CommentItem = ({ comment }: CommentItemProps) => {
           </Link>
           <p className="text-sm">{comment.value}</p>
         </div>
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
           <DropdownMenuTrigger asChild>
             <Button
               variant="ghost"
