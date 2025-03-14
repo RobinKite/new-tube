@@ -2,10 +2,9 @@ import { CornerDownRightIcon, Loader2Icon } from "lucide-react";
 
 import { trpc } from "@/trpc/client";
 import { Button } from "@/components/ui/button";
+import { DEFAULT_LIMIT } from "@/constants";
 
 import { CommentItem } from "./comment-item";
-
-import { DEFAULT_LIMIT } from "@/constants";
 
 interface CommentRepliesProps {
   parentId: string;
