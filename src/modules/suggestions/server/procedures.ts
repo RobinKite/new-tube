@@ -35,14 +35,14 @@ export const suggestionsRouter = createTRPCRouter({
           ...getTableColumns(videos),
           user: users,
           viewCount: db.$count(videoViews, eq(videoViews.videoId, videos.id)),
-          likeCoutn: db.$count(
+          likeCount: db.$count(
             videoReactions,
             and(
               eq(videoReactions.videoId, videos.id),
               eq(videoReactions.type, "like")
             )
           ),
-          dislikeCoutn: db.$count(
+          dislikeCount: db.$count(
             videoReactions,
             and(
               eq(videoReactions.videoId, videos.id),
