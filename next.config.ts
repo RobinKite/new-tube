@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "utfs.io" },
     ],
   },
+  experimental: {
+    typedRoutes: true,
+  },
 };
 
 export default nextConfig;
