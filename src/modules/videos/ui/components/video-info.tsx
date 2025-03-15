@@ -3,8 +3,8 @@ import { useMemo } from "react";
 import Link from "next/link";
 import { Route } from "next";
 
-import { UserInfo } from "@/modules/users/ui/components/user-info";
 import { UserAvatar } from "@/components/user-avatar";
+import { UserInfo } from "@/modules/users/ui/components/user-info";
 
 import { VideoGetManyOutput } from "../../types";
 
