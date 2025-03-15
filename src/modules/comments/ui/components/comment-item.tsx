@@ -12,11 +12,7 @@ import {
 import { useAuth, useClerk } from "@clerk/clerk-react";
 import { toast } from "sonner";
 import { useState } from "react";
-
-import { CommentsGetManyOutput } from "../../types";
-
-import { CommentForm } from "./comment-form";
-import { CommentReplies } from "./comment-replies";
+import { Route } from "next";
 
 import { Button } from "@/components/ui/button";
 import { trpc } from "@/trpc/client";
@@ -28,6 +24,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+
+import { CommentsGetManyOutput } from "../../types";
+
+import { CommentReplies } from "./comment-replies";
+import { CommentForm } from "./comment-form";
 
 interface CommentItemProps {
   comment: CommentsGetManyOutput["items"][number];
@@ -79,7 +80,7 @@ export const CommentItem = ({
   return (
     <div>
       <div className="flex gap-4">
-        <Link href={`/users/${comment.userId}`}>
+        <Link href={`/users/${comment.userId}` as Route}>
           <UserAvatar
             size={variant === "comment" ? "lg" : "sm"}
             imageUrl={comment.user.imageUrl}
@@ -87,7 +88,7 @@ export const CommentItem = ({
           />
         </Link>
         <div className="min-w-0 flex-1">
-          <Link href={`/users/${comment.userId}`}>
+          <Link href={`/users/${comment.userId}` as Route}>
             <div className="mb-0.5 flex items-center gap-2">
               <span className="pb-0.5 text-sm font-medium">
                 {comment.user.name}

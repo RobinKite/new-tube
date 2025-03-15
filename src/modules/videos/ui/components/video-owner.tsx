@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
+import { Route } from "next";
 
 import { UserAvatar } from "@/components/user-avatar";
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,7 @@ export const VideoOwner = ({ user, videoId }: VideoOwnerProps) => {
 
   return (
     <div className="flex min-w-0 items-center justify-between gap-3 sm:items-start sm:justify-start">
-      <Link href={`/users/${user.id}`}>
+      <Link href={`/users/${user.id}` as Route}>
         <div className="flex min-w-0 items-center gap-3">
           <UserAvatar
             size="lg"

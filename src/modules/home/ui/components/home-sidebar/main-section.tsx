@@ -3,6 +3,7 @@
 import { FlameIcon, HomeIcon, PlaySquareIcon } from "lucide-react";
 import Link from "next/link";
 import { useAuth, useClerk } from "@clerk/nextjs";
+import { Route } from "next";
 
 import {
   SidebarGroup,
@@ -48,7 +49,7 @@ export const MainSection = () => {
                   }
                 }}>
                 <Link
-                  href={item.url}
+                  href={item.url as Route}
                   className="flex items-center gap-4">
                   <item.icon />
                   <span className="text-sm">{item.title}</span>

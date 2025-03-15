@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { useRouter } from "next/navigation";
+import { Route } from "next";
 
 import { trpc } from "@/trpc/client";
 import { FilterCarousel } from "@/components/filter-carousel";
@@ -45,7 +46,7 @@ const CategoriesSectionSuspense = ({ categoryId }: CategoriesSectionProps) => {
       url.searchParams.delete("categoryId");
     }
 
-    router.push(url.toString());
+    router.push(url.toString() as Route);
   };
 
   return (
