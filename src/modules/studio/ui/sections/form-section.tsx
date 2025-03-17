@@ -262,14 +262,14 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem
-                    onClick={() => remove.mutate({ id: videoId })}>
-                    <TrashIcon className="mr-2 size-4" />
-                    Delete
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
                     onClick={() => revalidate.mutate({ id: videoId })}>
                     <RotateCcwIcon className="mr-2 size-4" />
                     Revalidate
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => remove.mutate({ id: videoId })}>
+                    <TrashIcon className="mr-2 size-4" />
+                    Delete
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
