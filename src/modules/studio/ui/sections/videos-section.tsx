@@ -92,7 +92,7 @@ const VideosSectionSuspense = () => {
   );
 
   return (
-    <div>
+    <>
       <div className="border-y">
         <Table>
           <TableHeader>
@@ -168,6 +168,6 @@ const VideosSectionSuspense = () => {
         isFetchingNextPage={query.isFetchingNextPage}
         fetchNextPage={query.fetchNextPage}
       />
-    </div>
+    </>
   );
 };

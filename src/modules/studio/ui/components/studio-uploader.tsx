@@ -20,7 +20,7 @@ export const StudioUploader = ({
   onSuccess,
 }: StudioUploaderProps) => {
   return (
-    <div>
+    <>
       <MuxUploader
         onSuccess={onSuccess}
         endpoint={endpoint}
@@ -68,6 +68,6 @@ export const StudioUploader = ({
           type="bar"
         />
       </MuxUploaderDrop>
-    </div>
+    </>
   );
 };

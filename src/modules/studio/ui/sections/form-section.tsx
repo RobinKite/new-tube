@@ -73,7 +73,7 @@ export const FormSection = ({ videoId }: FormSectionProps) => {
 
 const FormSectionSkeleton = () => {
   return (
-    <div>
+    <>
       <div className="mb-6 flex items-center justify-between">
         <div className="space-y-2">
           <Skeleton className="h-7 w-32" />
@@ -124,7 +124,7 @@ const FormSectionSkeleton = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

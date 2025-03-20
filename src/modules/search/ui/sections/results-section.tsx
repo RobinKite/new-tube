@@ -34,7 +34,7 @@ export const ResultsSection = (props: ResultsSectionProps) => {
 
 const ResultsSectionSkeleton = () => {
   return (
-    <div>
+    <>
       <div className="hidden flex-col gap-4 md:flex">
         {Array.from({ length: 5 }).map((_, index) => (
           <VideoRowCardSkeleton key={index} />
@@ -45,7 +45,7 @@ const ResultsSectionSkeleton = () => {
           <VideoGridCardSkeleton key={index} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

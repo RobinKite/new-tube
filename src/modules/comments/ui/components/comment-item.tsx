@@ -78,7 +78,7 @@ export const CommentItem = ({
   });
 
   return (
-    <div>
+    <>
       <div className="flex gap-4">
         <Link href={`/users/${comment.userId}` as Route}>
           <UserAvatar
@@ -200,6 +200,6 @@ export const CommentItem = ({
           videoId={comment.videoId}
         />
       )}
-    </div>
+    </>
   );
 };
