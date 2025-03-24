@@ -3,14 +3,14 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
+import { trpc } from "@/trpc/client";
+import { DEFAULT_LIMIT } from "@/constants";
+import { InfiniteScroll } from "@/components/infinite-scroll";
+
 import {
   PlaylistGridCard,
   PlaylistGridCardSkeleton,
 } from "../components/playlist-grid-card";
-
-import { trpc } from "@/trpc/client";
-import { DEFAULT_LIMIT } from "@/constants";
-import { InfiniteScroll } from "@/components/infinite-scroll";
 
 export const PlaylistsSection = () => {
   return (
