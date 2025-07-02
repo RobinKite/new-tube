@@ -2,9 +2,9 @@
 
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { toast } from "sonner";
 
 import { trpc } from "@/trpc/client";
-
 import { DEFAULT_LIMIT } from "@/constants";
 import {
   VideoGridCard,
@@ -56,6 +56,21 @@ const VideosSectionSuspense = ({ playlistId }: VideosSectionProps) => {
     { getNextPageParam: (lastPage) => lastPage.nextCursor }
   );
 
+  const utils = trpc.useUtils();
+
+  const removeVideo = trpc.playlists.removeVideo.useMutation({
+    onSuccess: (data) => {
+      toast.success("Video removed from playlist");
+      utils.playlists.getMany.invalidate();
+      utils.playlists.getManyForVideo.invalidate({ videoId: data.videoId });
+      utils.playlists.getOne.invalidate({ id: data.playlistId });
+      utils.playlists.getVideos.invalidate({ playlistId: data.playlistId });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
   return (
     <>
       <div className="flex flex-col gap-4 gap-y-10 md:hidden">
@@ -65,6 +80,9 @@ const VideosSectionSuspense = ({ playlistId }: VideosSectionProps) => {
             <VideoGridCard
               key={video.id}
               data={video}
+              onRemove={() =>
+                removeVideo.mutate({ playlistId, videoId: video.id })
+              }
             />
           ))}
       </div>
@@ -76,6 +94,9 @@ const VideosSectionSuspense = ({ playlistId }: VideosSectionProps) => {
               key={video.id}
               data={video}
               size="compact"
+              onRemove={() =>
+                removeVideo.mutate({ playlistId, videoId: video.id })
+              }
             />
           ))}
       </div>
