@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 import { trpc } from "@/trpc/client";
+
 import { DEFAULT_LIMIT } from "@/constants";
 import {
   VideoGridCard,
