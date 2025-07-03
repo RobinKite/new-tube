@@ -4,8 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LogOutIcon, VideoIcon } from "lucide-react";
 
-import { StudioSidebarHeader } from "./studio-sidebar-header";
-
 import {
   Sidebar,
   SidebarContent,
@@ -15,6 +13,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
+
+import { StudioSidebarHeader } from "./studio-sidebar-header";
 
 export const StudioSidebar = () => {
   const pathname = usePathname();
