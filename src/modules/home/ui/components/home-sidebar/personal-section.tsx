@@ -59,6 +59,7 @@ export const PersonalSection = () => {
                   }
                 }}>
                 <Link
+                  prefetch
                   href={item.url as Route}
                   className="flex items-center gap-4">
                   <item.icon />

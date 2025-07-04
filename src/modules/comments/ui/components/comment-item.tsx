@@ -80,7 +80,9 @@ export const CommentItem = ({
   return (
     <>
       <div className="flex gap-4">
-        <Link href={`/users/${comment.userId}` as Route}>
+        <Link
+          prefetch
+          href={`/users/${comment.userId}` as Route}>
           <UserAvatar
             size={variant === "comment" ? "lg" : "sm"}
             imageUrl={comment.user.imageUrl}
@@ -88,7 +90,9 @@ export const CommentItem = ({
           />
         </Link>
         <div className="min-w-0 flex-1">
-          <Link href={`/users/${comment.userId}` as Route}>
+          <Link
+            prefetch
+            href={`/users/${comment.userId}` as Route}>
             <div className="mb-0.5 flex items-center gap-2">
               <span className="pb-0.5 text-sm font-medium">
                 {comment.user.name}
