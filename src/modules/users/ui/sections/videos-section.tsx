@@ -3,7 +3,6 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
-// eslint-disable-next-line import/order
 import { trpc } from "@/trpc/client";
 import { DEFAULT_LIMIT } from "@/constants";
 import {

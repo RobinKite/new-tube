@@ -7,7 +7,6 @@ import { UserGetOneOutput } from "../../types";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
-
 import { UserAvatar } from "@/components/user-avatar";
 import { SubscriptionButton } from "@/modules/subscriptions/ui/components/subscription-button";
 import { useSubscription } from "@/modules/subscriptions/hooks/use-subscription";

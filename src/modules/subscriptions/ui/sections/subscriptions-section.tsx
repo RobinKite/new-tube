@@ -6,14 +6,14 @@ import { toast } from "sonner";
 import Link from "next/link";
 import { Route } from "next";
 
+import { trpc } from "@/trpc/client";
+import { DEFAULT_LIMIT } from "@/constants";
+import { InfiniteScroll } from "@/components/infinite-scroll";
+
 import {
   SubscriptionItem,
   SubscriptionItemSkeleton,
 } from "../components/subscription-item";
-
-import { trpc } from "@/trpc/client";
-import { DEFAULT_LIMIT } from "@/constants";
-import { InfiniteScroll } from "@/components/infinite-scroll";
 
 export const SubscriptionsSection = () => {
   return (
