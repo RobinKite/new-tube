@@ -1,7 +1,7 @@
 # 🎮 YouTube Clone
 
-This project is hosted on [Vercel](https://new-tube-6wk9.vercel.app/).
-A feature-rich YouTube clone built with cutting-edge technologies. The application offers a seamless video viewing and content creation experience, complete with AI-powered features, automatic captions, real-time updates, and a fully responsive design.
+This project is hosted on [Vercel](https://new-tube-6wk9.vercel.app/).  
+A feature-rich YouTube clone built with cutting-edge technologies. The application offers a seamless video viewing and content creation experience, complete with AI-powered features, automatic captions, real-time updates, and a fully responsive design.  
 ⚠️ Note: This project currently exceeds the 2048 MB memory limit of the Vercel free tier. Optimization and infrastructure improvements are in progress.
 
 ## 🚀 Features
@@ -45,7 +45,6 @@ A feature-rich YouTube clone built with cutting-edge technologies. The applicati
 * **Drizzle ORM + Neon** – Serverless Postgres database with type safety.
 * **UploadThing + Mux** – Video upload and playback.
 * **Lucide React** – Icon set.
-* **Recharts** – Charting and analytics.
 * **Sonner + Toasts** – Real-time notifications and toasts.
 
 ## 📦 Infrastructure
