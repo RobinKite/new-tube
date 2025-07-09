@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎮 YouTube Clone
 
-## Getting Started
+This project is hosted on [Vercel](https://new-tube-6wk9.vercel.app/).
+A feature-rich YouTube clone built with cutting-edge technologies. The application offers a seamless video viewing and content creation experience, complete with AI-powered features, automatic captions, real-time updates, and a fully responsive design.
+⚠️ Note: This project currently exceeds the 2048 MB memory limit of the Vercel free tier. Optimization and infrastructure improvements are in progress.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* 🎥 **Functional Video Player** – Smooth, responsive playback with support for all modern formats.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* ✨ **Auto-Captions** – Automatic English captions generated for every video.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* 👍 **Like / Dislike System** – React to videos and engage with content.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* 💬 **Comments and Replies** – Nested comments to foster user interaction.
 
-## Learn More
+* 🔔 **Subscribe / Unsubscribe** – Follow your favorite creators.
 
-To learn more about Next.js, take a look at the following resources:
+* 🏠 **Main Feed** – Homepage featuring all uploaded videos.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* 📺 **Studio Page** – Creators can manage videos with options to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  * Edit titles, descriptions, and thumbnails.
+  * Use AI to auto-generate thumbnails, titles, and descriptions *(experimental)*.
+  * ⚠️ Note: Due to lack of funding, AI-powered features have not been fully tested.
 
-## Deploy on Vercel
+* 📂 **Playlists** – Custom playlists and a dedicated *Liked Videos* page.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* 👥 **Subscribers Page** – See who’s subscribed to your channel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* 📈 **Trending & History Pages** – View what's popular and revisit past videos.
+
+* 👤 **User Profiles** – Public profile for every user, showcasing their uploads, custom profile image and banner.
+
+* 🌐 **Fully Responsive Design** – Optimized for desktop and mobile devices.
+
+## 🛠 Tech Stack
+
+* **Next.js 15** – Server-side rendering & routing.
+* **React 19** – Latest React features and performance improvements.
+* **Tailwind CSS** – Utility-first, responsive styling.
+* **ShadCN** – Clean, reusable UI components.
+* **Clerk** – Authentication and user management.
+* **tRPC** – Typesafe API communication.
+* **Drizzle ORM + Neon** – Serverless Postgres database with type safety.
+* **UploadThing + Mux** – Video upload and playback.
+* **Lucide React** – Icon set.
+* **Recharts** – Charting and analytics.
+* **Sonner + Toasts** – Real-time notifications and toasts.
+
+## 📦 Infrastructure
+
+* **Vercel** – Deployment platform.
+* **Neon** – Serverless Postgres database.
+* **Mux** – Video encoding, streaming, and analytics.
+* **Upstash** – Redis-based rate limiting and workflows.
+
+## 🔮 Future Improvements
+
+* 🛠️ Fixing known issues and bugs
+* 📄 Add support for subtitles in multiple languages.
+* 🎨 Channel customization: add about section etc.
